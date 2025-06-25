@@ -1,0 +1,66 @@
+### Root endpoint
+GET http://localhost:8000/
+
+### Get all users (MySQL)
+GET http://localhost:8000/users
+
+### Add a user (MySQL)
+POST http://localhost:8000/users
+Content-Type: application/json
+
+{
+  "name": "Test User",
+  "age": 30
+}
+
+### Get all transactions (MySQL)
+GET http://localhost:8000/transactions
+
+### Add a transaction (MySQL)
+POST http://localhost:8000/transactions
+Content-Type: application/json
+
+{
+  "client_name": "Virat Kohli",
+  "stock_name": "Reliance Industries",
+  "stock_symbol": "RELIANCE",
+  "transaction_type": "buy",
+  "quantity": 1000,
+  "price_per_unit": 2500.00,
+  "total_value": 2500000.00,
+  "transaction_date": "2025-06-01",
+  "relationship_manager": "Rahul Sharma"
+}
+
+### Get all clients (MongoDB)
+GET http://localhost:8000/clients
+
+### Add a client (MongoDB)
+POST http://localhost:8000/clients
+Content-Type: application/json
+
+{
+  "name": "Mongo Client",
+  "address": "123 Test St",
+  "risk_appetite": "Medium",
+  "investment_preferences": ["Equity", "Debt"],
+  "relationship_manager": "Priya Nair"
+}
+
+
+### Ask SQL QA (LangChain/Groq, MySQL natural language to business insight)
+POST http://localhost:8000/sql-qa
+Content-Type: application/json
+
+{
+  "question": "Number of users more than age 20"
+}
+
+### Example: Ask SQL QA about transactions (LangChain/Groq)
+POST http://localhost:8000/sql-qa
+Content-Type: application/json
+
+{
+  "question": "give me all transactions of vurat koli"
+}
+
